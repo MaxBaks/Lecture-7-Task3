@@ -4,25 +4,25 @@ export default class Character {
     this.health = health;
     this.level = level;
     this.attack = attack;
-    this.defence = defence; 
+    this.defence = defence;
 
     this.powerMode = false;
     this.powerAttacks = 3;
   }
 
   get powerMode() {
-    return this._powerMode;
+    return this.pMode;
   }
 
   set powerMode(modeEnable) {
-    if (!this._modeBeenActivated) {
-      this._powerMode = modeEnable;
+    if (!this.modeBeenActivated) {
+      this.pMode = modeEnable;
       if (modeEnable) {
-        this._modeBeenActivated = true;
+        this.modeBeenActivated = true;
       }
     }
     if (!modeEnable) {
-      this._powerMode = false;
+      this.pMode = false;
     }
   }
 
@@ -34,26 +34,26 @@ export default class Character {
   }
 
   get attack() {
-    return this.powerMode ? this._attack * 2 : this._attack;
+    return this.powerMode ? this.at * 2 : this.at;
   }
 
   set attack(att) {
-    return this._attack = att;
+    this.at = att;
   }
 
   get defence() {
-    return this.powerMode ? this._defence * 2 : this._defence;
+    return this.powerMode ? this.def * 2 : this.def;
   }
 
   set defence(att) {
-    return this._defence = att;
+    this.def = att;
   }
 
   get health() {
-    return this.powerMode ? this._health * 2 : this._health;
+    return this.powerMode ? this.heal * 2 : this.heal;
   }
 
   set health(att) {
-    return this._health = att;
+    this.heal = att;
   }
 }
