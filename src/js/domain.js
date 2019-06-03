@@ -1,10 +1,10 @@
 export default class Character {
   constructor(name, health, level, attack, defence) {
     this.name = name;
-    this.health = health;
     this.level = level;
-    this.attack = attack;
-    this.defence = defence;
+    this.heal = health;
+    this.att = attack;
+    this.def = defence;
 
     this.powerMode = false;
     this.powerAttacks = 3;
@@ -34,26 +34,14 @@ export default class Character {
   }
 
   get attack() {
-    return this.powerMode ? this.at * 2 : this.at;
-  }
-
-  set attack(att) {
-    this.at = att;
+    return this.powerMode ? this.att * 2 : this.att;
   }
 
   get defence() {
     return this.powerMode ? this.def * 2 : this.def;
   }
 
-  set defence(att) {
-    this.def = att;
-  }
-
   get health() {
     return this.powerMode ? this.heal * 2 : this.heal;
-  }
-
-  set health(att) {
-    this.heal = att;
   }
 }
